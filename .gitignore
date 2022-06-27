@@ -131,7 +131,6 @@ wandb/
 checkpoints/
 
 # old version
-hotr/models/hotr_v1.py
 Makefile
 
 .DS_Store

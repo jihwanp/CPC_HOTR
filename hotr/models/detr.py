@@ -23,7 +23,6 @@ from .post_process import PostProcess
 from .feed_forward import MLP
 
 from .hotr import HOTR
-from .hotr_v1 import HOTR_V1
 
 class DETR(nn.Module):
     """ This is the DETR module that performs object detection """
@@ -145,38 +144,22 @@ def build(args):
 
         kwargs = {}
         if args.dataset_file == 'hico-det': kwargs['return_obj_class'] = args.valid_obj_ids
-        if args.sep_enc_forward:
-            model = HOTR_V1(
-                detr=model,
-                num_hoi_queries=args.num_hoi_queries,
-                num_actions=args.num_actions,
-                interaction_transformer=interaction_transformer,
-                augpath_name = args.augpath_name, 
-                share_dec_param = args.share_dec_param,
-                stop_grad_stage = args.stop_grad_stage,
-                freeze_detr=(args.frozen_weights is not None),
-                share_enc=args.share_enc,
-                pretrained_dec=args.pretrained_dec,
-                temperature=args.temperature,
-                hoi_aux_loss=args.hoi_aux_loss,
-                **kwargs # only return verb class for HICO-DET dataset
-            )
-        else:
-            model = HOTR(
-                detr=model,
-                num_hoi_queries=args.num_hoi_queries,
-                num_actions=args.num_actions,
-                interaction_transformer=interaction_transformer,
-                augpath_name = args.augpath_name, 
-                share_dec_param = args.share_dec_param,
-                stop_grad_stage = args.stop_grad_stage,
-                freeze_detr=(args.frozen_weights is not None),
-                share_enc=args.share_enc,
-                pretrained_dec=args.pretrained_dec,
-                temperature=args.temperature,
-                hoi_aux_loss=args.hoi_aux_loss,
-                **kwargs # only return verb class for HICO-DET dataset
-            )
+
+        model = HOTR(
+            detr=model,
+            num_hoi_queries=args.num_hoi_queries,
+            num_actions=args.num_actions,
+            interaction_transformer=interaction_transformer,
+            augpath_name = args.augpath_name, 
+            share_dec_param = args.share_dec_param,
+            stop_grad_stage = args.stop_grad_stage,
+            freeze_detr=(args.frozen_weights is not None),
+            share_enc=args.share_enc,
+            pretrained_dec=args.pretrained_dec,
+            temperature=args.temperature,
+            hoi_aux_loss=args.hoi_aux_loss,
+            **kwargs # only return verb class for HICO-DET dataset
+        )
         postprocessors = {'hoi': PostProcess(args.HOIDet)}
     else:
         criterion = SetCriterion(args.num_classes, matcher=matcher, weight_dict=weight_dict,

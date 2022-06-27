@@ -126,8 +126,6 @@ def get_args_parser():
     parser.add_argument('--stop_grad_stage',action='store_true',help='Do not back propogate loss to previous stage')
     parser.add_argument('--path_id', default=0, type=int)
 
-    parser.add_argument('--sep_enc_forward',action='store_true')
-
     # * dataset parameters
     parser.add_argument('--dataset_file', help='[coco | vcoco]')
     parser.add_argument('--data_path', type=str)
