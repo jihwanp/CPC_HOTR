@@ -1,6 +1,6 @@
 # CPC_HOTR
 
-This repository contains the application of [Cross-Path Consistency Learning](https://arxiv.org/abs/2204.04836) at [HOTR](https://arxiv.org/abs/2104.13682), based on the official implementation of QPIC in [here](https://github.com/kakaobrain/HOTR).
+This repository contains the application of [Cross-Path Consistency Learning](https://arxiv.org/abs/2204.04836) at [HOTR](https://arxiv.org/abs/2104.13682), based on the official implementation of HOTR in [here](https://github.com/kakaobrain/HOTR).
 
 <div align="center">
   <img src="imgs/mainfig.png" width="900px" />
