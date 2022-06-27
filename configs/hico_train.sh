@@ -14,11 +14,11 @@ python -u main.py \
     --pretrained_dec \
     --use_consis \
     --share_dec_param \
-    --epochs 90 \
-    --lr_drop 60 \
+    --epochs 50 \
+    --lr_drop 30 \
     --lr 1e-4 \
     --lr_backbone 1e-5 \
-    --ramp_up_epoch 30 \
+    --ramp_up_epoch 20 \
     --path_id 0 \
     --num_hoi_queries 16 \
     --set_cost_idx 20 \
