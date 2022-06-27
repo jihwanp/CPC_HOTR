@@ -133,3 +133,7 @@ checkpoints/
 # old version
 hotr/models/hotr_v1.py
 Makefile
+
+#datasets 
+hico_20160224_det/
+v-coco/
