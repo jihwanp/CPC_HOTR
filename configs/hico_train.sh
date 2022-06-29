@@ -14,18 +14,18 @@ python -u main.py \
     --pretrained_dec \
     --use_consis \
     --share_dec_param \
-    --epochs 50 \
-    --lr_drop 30 \
+    --epochs 90 \
+    --lr_drop 60 \
     --lr 1e-4 \
     --lr_backbone 1e-5 \
-    --ramp_up_epoch 20 \
+    --ramp_up_epoch 30 \
     --path_id 0 \
     --num_hoi_queries 16 \
     --set_cost_idx 20 \
     --hoi_idx_loss_coef 1 \
     --hoi_act_loss_coef 10 \
     --backbone resnet50 \
-    --hoi_consistency_loss_coef 0.2 \
+    --hoi_consistency_loss_coef 0.1 \
     --hoi_idx_consistency_loss_coef 1 \
     --hoi_act_consistency_loss_coef 2 \
     --hoi_eos_coef 0.1 \

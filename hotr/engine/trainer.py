@@ -29,7 +29,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
         consis_coef=sigmoid_rampup(epoch,ramp_up_epoch,max_consis_coef)
     else:
         consis_coef=cosine_rampdown(epoch-rampdown_epoch,max_epoch-rampdown_epoch,max_consis_coef)
-    print(consis_coef)
+
     print(f"\n>>> Epoch #{(epoch+1)}")
     for samples, targets in metric_logger.log_every(data_loader, print_freq, header):
         samples = samples.to(device)
