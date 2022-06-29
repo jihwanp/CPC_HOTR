@@ -28,6 +28,7 @@ python -u main.py \
     --hoi_consistency_loss_coef 0.1 \
     --hoi_idx_consistency_loss_coef 1 \
     --hoi_act_consistency_loss_coef 2 \
+    --stop_grad_stage \
     --hoi_eos_coef 0.1 \
     --temperature 0.2 \
     --no_aux_loss \

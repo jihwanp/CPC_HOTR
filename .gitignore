@@ -135,5 +135,5 @@ Makefile
 
 .DS_Store
 #datasets 
-hico_20160224_det/
-v-coco/
+hico_20160224_det
+v-coco
