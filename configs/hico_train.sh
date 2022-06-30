@@ -25,7 +25,7 @@ python -u main.py \
     --hoi_idx_loss_coef 1 \
     --hoi_act_loss_coef 10 \
     --backbone resnet50 \
-    --hoi_consistency_loss_coef 0.1 \
+    --hoi_consistency_loss_coef 0.5 \
     --hoi_idx_consistency_loss_coef 1 \
     --hoi_act_consistency_loss_coef 2 \
     --stop_grad_stage \
