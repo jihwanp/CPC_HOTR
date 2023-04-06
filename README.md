@@ -102,7 +102,7 @@ VCOCO
 ```
 python -m torch.distributed.launch \
     --nproc_per_node=8 \
-    --use_env vcoco_main.py \
+    --use_env main.py \
     --batch_size 2 \
     --HOIDet \
     --path_id 0 \
